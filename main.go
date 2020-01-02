@@ -2,35 +2,40 @@ package main
 
 import (
 	"flag"
-	"fmt"
-	"log"
-	"config"
+	"time"
 
-	"github.com/spf13/viper"
+	"github.com/NothingXiang/go-study/api"
+	"github.com/NothingXiang/go-study/config"
+	"github.com/NothingXiang/go-study/pkg"
 )
 
-const (
-	appName = "go-study"
-	Version = "0.1.0"
-	buildTime
+var (
+	PkgInfo = pkg.Info{
+		AppName:   "go-study",
+		Version:   "0.1.0",
+		StartTime: time.Now(),
+	}
 )
 
 func main() {
 
-	// load common line args
+	// 1. load common line args
+	// todo:may be can update to cobra
 	flag.Parse()
 
-	// recover
-	defer func() {
-		if r := recover(); r != nil {
-			log.Println(appName, "Process Stop ", r)
-		} else {
-			log.Println(appName, "Process Stop")
-		}
-	}()
+	// 2. recover
+	//defer func() {
+	//	if r := recover(); r != nil {
+	//		log.Println(PkgInfo.AppName, "Process Stop ", r)
+	//	} else {
+	//		log.Println(PkgInfo.AppName, "Process Stop")
+	//	}
+	//}()
 
-	//
+	// 3. load config
 	config.InitConfig()
 
-	fmt.Println(viper.Get("app.name"))
+	// 4. set routers
+	api.Serve(PkgInfo)
+
 }
