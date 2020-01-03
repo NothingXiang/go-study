@@ -1,2 +1,2 @@
 # go-study
-only my go learning package
+my backend fast start demo base on go
