@@ -20,11 +20,10 @@ func Serve(info pkg.Info) {
 	gin.SetMode(gin.ReleaseMode)
 	engine := gin.Default()
 
+	// 注册路由
 	engine.GET("/version", func(c *gin.Context) {
 		c.JSON(http.StatusOK, info)
 	})
-
-	// 注册路由
 	demo.RegisterRoutes(engine)
 
 	port := viper.GetString("http.port")
