@@ -9,9 +9,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// todo: Add Implements
-var service services.DemoService
+var service services.DemoService = services.NewDemoServiceIml()
 
+// todo : format return type
 func GetDemoHandler(c *gin.Context) {
 	id := c.Query("id")
 
@@ -26,7 +26,7 @@ func GetDemoHandler(c *gin.Context) {
 func SetDemohandler(c *gin.Context) {
 	// todo: can update to dto
 	var dto *models.DemoModel
-	
+
 	if err := c.Bind(dto); err != nil {
 		c.JSON(http.StatusOK, errors.ParamFmt.SetMsg(err))
 		return
