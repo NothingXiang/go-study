@@ -9,7 +9,7 @@ import (
 	"net/http"
 
 	"github.com/NothingXiang/go-study/api/demo"
-	"github.com/NothingXiang/go-study/pkg"
+	"github.com/NothingXiang/go-study/common/pkg"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )

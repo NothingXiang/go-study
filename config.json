@@ -5,7 +5,7 @@
   },
   "mongo": {
     "url": "localhost:27017",
-    "dbname": "",
+    "dbname": "go-study",
     "name": "",
     "password": ""
   },

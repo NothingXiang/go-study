@@ -34,5 +34,5 @@ var (
 	NotExist     = newAPIError("10002", "not exist")
 	InvalidParam = newAPIError("10003", "invalid param")
 	ParamFmt     = newAPIError("10004", "param format errors")
-	// another Error
+	// other Errors ...
 )

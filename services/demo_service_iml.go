@@ -1,6 +1,8 @@
 package services
 
 import (
+	"log"
+
 	"github.com/NothingXiang/go-study/models"
 	"github.com/NothingXiang/go-study/store"
 	"github.com/NothingXiang/go-study/store/mongo"
@@ -16,7 +18,7 @@ func NewDemoServiceIml() *DemoServiceIml {
 
 func (d *DemoServiceIml) GetDemo(id string) (m *models.DemoModel, err error) {
 	if m, err = d.DemoStore.GetDemo(id); err != nil {
-		// todo: 打log
+		log.Printf("[GetDemo] failed:%v", err)
 		return nil, err
 	}
 	return
@@ -24,7 +26,7 @@ func (d *DemoServiceIml) GetDemo(id string) (m *models.DemoModel, err error) {
 
 func (d *DemoServiceIml) SetDemo(model models.DemoModel) (err error) {
 	if err = d.DemoStore.SetDemo(model); err != nil {
-		// todo: 打log
+		log.Printf("[SetDemo] failed:%v", err)
 		return err
 	}
 	return nil

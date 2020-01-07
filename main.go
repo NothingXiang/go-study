@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/NothingXiang/go-study/api"
-	"github.com/NothingXiang/go-study/config"
-	"github.com/NothingXiang/go-study/pkg"
+	"github.com/NothingXiang/go-study/common/config"
+	"github.com/NothingXiang/go-study/common/pkg"
 )
 
 var (
