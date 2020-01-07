@@ -5,9 +5,9 @@ import (
 )
 
 func RegisterRoutes(e *gin.Engine) {
-	e.Group("/demo")
+	demo := e.Group("/demo")
 	{
-		e.GET("/get", GetDemoHandler)
-		e.POST("/set", SetDemoHandler)
+		demo.GET("/get", GetDemoHandler)
+		demo.POST("/set", SetDemoHandler)
 	}
 }

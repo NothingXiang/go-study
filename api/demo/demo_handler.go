@@ -27,7 +27,7 @@ func SetDemoHandler(c *gin.Context) {
 	// todo: can update to dto
 	var dto *models.DemoModel
 
-	if err := c.Bind(dto); err != nil {
+	if err := c.Bind(&dto); err != nil {
 		c.JSON(http.StatusOK, errors.ParamFmt.SetMsg(err).Error())
 		return
 	}
