@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"log"
 	"time"
 
 	"github.com/NothingXiang/go-study/api"
@@ -23,14 +24,14 @@ func main() {
 	// todo:may be can update to cobra
 	flag.Parse()
 
-	// 2. recover
-	//defer func() {
-	//	if r := recover(); r != nil {
-	//		log.Println(PkgInfo.AppName, "Process Stop ", r)
-	//	} else {
-	//		log.Println(PkgInfo.AppName, "Process Stop")
-	//	}
-	//}()
+	//2. recover
+	defer func() {
+		if r := recover(); r != nil {
+			log.Println(PkgInfo.AppName, "Process Stop ", r)
+		} else {
+			log.Println(PkgInfo.AppName, "Process Stop")
+		}
+	}()
 
 	// 3. load config
 	config.InitConfig()
