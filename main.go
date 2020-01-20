@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	PkgInfo = pkg.Info{
+	PkgInfo = &pkg.Info{
 		AppName:   "go-study",
 		Version:   "0.1.0",
 		StartTime: time.Now(),

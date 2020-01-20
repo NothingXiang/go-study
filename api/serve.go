@@ -14,7 +14,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func Serve(info pkg.Info) {
+func Serve(info *pkg.Info) {
 
 	// 初始化
 	gin.SetMode(gin.ReleaseMode)

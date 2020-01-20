@@ -9,14 +9,19 @@ import (
 	"github.com/spf13/viper"
 )
 
+const (
+	DefaultConfigFile = "config.json"
+	DefaultConfigPath = "."
+)
+
 var once sync.Once
 
 // load config file
 func InitConfig() {
 	// make sure config just init once
 	once.Do(func() {
-		viper.SetConfigName("config.json")
-		viper.AddConfigPath(".")
+		viper.SetConfigName(DefaultConfigFile)
+		viper.AddConfigPath(DefaultConfigPath)
 		if err := viper.ReadInConfig(); err != nil {
 			panic("[Load Config]failed:%v" + err.Error())
 		}
