@@ -3,13 +3,9 @@
  */
 package util
 
-import (
-	"strings"
-)
+import "strings"
 
+// 判断是否空字符串，是返回true,否则返回false
 func IsEmpty(s string) bool {
-	if strings.TrimSpace(s); len(s) != 0 {
-		return false
-	}
-	return true
+	return len(strings.TrimSpace(s)) == 0
 }
