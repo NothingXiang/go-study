@@ -2,5 +2,16 @@
   "http": {
     "host": "127.0.0.1",
     "port": 8080
+  },
+  "mongo": {
+    "url": "localhost:27017",
+    "dbname": "go-study",
+    "name": "",
+    "password": ""
+  },
+  "redis": {
+    "url": "localhost:6379",
+    "name": "",
+    "password": ""
   }
 }

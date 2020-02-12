@@ -1,3 +1,6 @@
+/*
+ *实体类
+*/
 package models
 
 type DemoModel struct {

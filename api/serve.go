@@ -9,22 +9,21 @@ import (
 	"net/http"
 
 	"github.com/NothingXiang/go-study/api/demo"
-	"github.com/NothingXiang/go-study/pkg"
+	"github.com/NothingXiang/go-study/common/pkg"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 )
 
-func Serve(info pkg.Info) {
+func Serve(info *pkg.Info) {
 
 	// 初始化
 	gin.SetMode(gin.ReleaseMode)
 	engine := gin.Default()
 
+	// 注册路由
 	engine.GET("/version", func(c *gin.Context) {
 		c.JSON(http.StatusOK, info)
 	})
-
-	// 注册路由
 	demo.RegisterRoutes(engine)
 
 	port := viper.GetString("http.port")
